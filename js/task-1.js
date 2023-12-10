@@ -1,13 +1,42 @@
-function slugify(title) {  //*функція slugify(title), яка приймає заголовок статті, параметр (title) */
 
-  //*повертає slug, створений із цього рядка.
-
-  return title.toLowerCase() //* Перетворює рядок в нижній регістр
-    .split(' ')//* Pозділяє слова за допомогою пробілів
-    .join('-');//* Заміна пробілів на тире  
+function isEnoughCapacity(products, containerSize) {
+  // Перебираємо product через ключі об'єкта products за допомогою for...of 
+  for (const productName of Object.keys(products)) {
+    const productQuantity = products[productName]; //  Отримуємо значення (значення властивості), 
+    // що відповідає ключу productName в об'єкті products
+    // Якщо кількість товару більша за доступний об'єм контейнера, повертаємо false
+    if (productQuantity > containerSize) {
+      return false;
+    }
+  }
+  // Якщо всі товари поміщаються в контейнер, повертаємо true
+  return true;
 }
 
-console.log(slugify("Arrays for begginers")); // "arrays-for-begginers"
-console.log(slugify("English for developer")); // "english-for-developer"
-console.log(slugify("Ten secrets of JavaScript")); // "ten-secrets-of-javascript"
-console.log(slugify("How to become a JUNIOR developer in TWO WEEKS")); // "how-to-become-a-junior-developer-in-two-weeks"
+// якщо писати так, 
+// if (productQuantity <= containerSize) {
+//   return true;
+// } return false;
+// то якщо перший товар має кількість, яка не перевищує containerSize,
+// тоді цей код відразу ж поверне true без перевірки інших товарів.
+//Однак якщо перший товар не вміщується, тоді функція поверне false без перевірки інших товарів.
+// оскільки потрібно перевірити всі товари та повернути true лише тоді,
+// коли всі товари вміщуються, краще використовувати цикл для перевірки кожного товару
+// та повертати false лише після перевірки всіх товарів.  
+
+
+console.log(
+  isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8)
+); // true
+
+console.log(
+  isEnoughCapacity({ apples: 4, grapes: 6, lime: 16 }, 12)
+); // false
+
+console.log(
+  isEnoughCapacity({ apples: 1, lime: 5, tomatoes: 3 }, 14)
+); // true
+
+console.log(
+  isEnoughCapacity({ apples: 18, potatoes: 5, oranges: 2 }, 7)
+); // false
