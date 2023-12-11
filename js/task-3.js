@@ -1,3 +1,22 @@
+// Об’єкт profile описує профіль користувача на ігровій платформі.
+// У його властивостях зберігається ім’я профілю username
+// та кількість активних годин playTime, проведених у грі.
+
+// const profile = {
+//     username: "Jacob",
+//     playTime: 300,
+// };
+
+// Доповни об’єкт profile методами для роботи з його властивостями.
+// Метод changeUsername(newName) повинен приймати рядок(нове ім’я) в параметр newName
+// та змінювати значення властивості username на нове.Нічого не повертає.
+// Метод updatePlayTime(hours) повинен приймати число(кількість годин) у параметр hours
+// та збільшити на нього значення властивості playTime.Нічого не повертає.
+// Метод getInfo() має повертати рядок формату
+//     < Username > has < amount > active hours!, де < Username > — це ім’я профілю,
+//     а < amount > — кількість ігрових годин.
+
+
 // function filterArray(numbers, value) {//* Оголошуємо функцію*/
 
 //   //* Створюємо порожній масив для чисел/
@@ -27,9 +46,11 @@
 // //~Якщо value менше, ніж довжина масиву numbers, то цикл буде виконуватися, але не для кожного елемента масиву numbers.
 
 
-// console.log(filterArray([1, 2, 3, 4, 5], 3)); // [4, 5]
-// console.log(filterArray([1, 2, 3, 4, 5], 4)); // [5]
-// console.log(filterArray([1, 2, 3, 4, 5], 5)); // []
-// console.log(filterArray([12, 24, 8, 41, 76], 38)); // [41, 76]
-// console.log(filterArray([12, 24, 8, 41, 76], 20)); // [24, 41, 76]
 
+// console.log(profile.getInfo()); // "Jacob has 300 active hours!"
+
+// profile.changeUsername("Marco");
+// console.log(profile.getInfo()); // "Marco has 300 active hours!"
+
+// profile.updatePlayTime(20);
+// console.log(profile.getInfo()); // "Marco has 320 active hours!"
