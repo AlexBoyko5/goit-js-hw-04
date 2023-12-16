@@ -15,22 +15,22 @@
 //     < Username > has < amount > active hours!, де < Username > — це ім’я профілю,
 //     а < amount > — кількість ігрових годин.
 
-const profile = {
-    username: "Jacob",
-    playTime: 300,
+// const profile = {
+//     username: "Jacob",
+//     playTime: 300,
 
-    changeUsername(newName) { //* Метод для зміни імені 
-        this.username = newName;
-    },
+//     changeUsername(newName) { //* Метод для зміни імені 
+//         this.username = newName;
+//     },
 
-    updatePlayTime(hours) { //* Метод для оновлення кількості активних годин
-        this.playTime += hours;
-    },
+//     updatePlayTime(hours) { //* Метод для оновлення кількості активних годин
+//         this.playTime += hours;
+//     },
 
-    getInfo() { //* отримання інформації про профіль
-        return `${this.username} has ${this.playTime} active hours!`;
-    }
-};
+//     getInfo() { //* отримання інформації про профіль
+//         return `${this.username} has ${this.playTime} active hours!`;
+//     }
+// };
 
 
 console.log(profile.getInfo()); // "Jacob has 300 active hours!"

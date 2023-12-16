@@ -11,8 +11,24 @@ function calcAverageCalories(days) { //* Оголошуємо функцію. Ф
         totalCalories += days[i].calories; //* Додаємо кількость Calories до загальної суми Calories,
         //* (додаємо кількість калорій, спожитих у день, до загальної кількості)
     }
-    return totalCalories / days.length; //*Обчислення середньодобового значення і повернення його
+    // return totalCalories / days.length; //*Обчислення середньодобового значення і повернення його
+    return days.length === 0 ? 0 : totalCalories / days.length;
 }
+//*Более развернутый вариант
+// function calcAverageCalories(days) {
+//     let totalCalories = 0;
+//     if (days.length === 0) {
+//         return 0;
+//     } else {
+//         for (let i = 0; i < days.length; i++) {
+//             totalCalories += days[i].calories;
+//         }
+//         return totalCalories / days.length;
+//     }
+// }
+
+
+
 console.log(
     calcAverageCalories([
         { day: "monday", calories: 3010 },
